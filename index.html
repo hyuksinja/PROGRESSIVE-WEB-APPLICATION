@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome E-commerce PWA</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/images/icons/icon-192x192.png" type="image/png">
+    <meta name="theme-color" content="#1f2937"/>
+    <style>
+        /* Custom font for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">AwesomeShop</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300 transition duration-300">Products</a></li>
+                    <li><a href="#" class="hover:text-gray-300 transition duration-300">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="#" class="hover:text-gray-300 transition duration-300">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto flex-grow p-4 md:p-8">
+        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Featured Products</h2>
+
+        <!-- PWA Installation & Notification Prompt Section -->
+        <section id="pwa-prompts" class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded-lg mb-6 hidden" role="alert">
+            <div class="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+                <div>
+                    <strong class="font-bold">Enhance your experience!</strong>
+                    <span class="block sm:inline"> Install this app for offline access & faster loading.</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="install-button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 whitespace-nowrap">Install App</button>
+                    <button id="notification-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 whitespace-nowrap">Enable Notifications</button>
+                    <button id="close-prompts" class="text-blue-700 hover:text-blue-900 font-bold py-2 px-4 rounded-md">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Product cards will be dynamically loaded here by app.js -->
+        </div>
+
+        <!-- Offline Status Indicator -->
+        <div id="offline-status" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-red-500 text-white p-3 rounded-lg shadow-lg hidden">
+            You are offline! Limited functionality available.
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 text-center shadow-inner mt-8">
+        <div class="container mx-auto">
+            <p>&copy; 2025 AwesomeShop PWA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>
