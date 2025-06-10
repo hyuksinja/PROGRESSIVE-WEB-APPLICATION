@@ -91,8 +91,13 @@ Handling user authentication and profiles.
 Processing orders and payments.
 Sending real-time push notifications based on backend events (e.g., order confirmation, shipping updates).
 State Management: For larger applications, consider a state management library (e.g., Redux, Zustand) for better data flow.
+
 Advanced Caching Strategies: Implement more sophisticated caching using Workbox for fine-grained control over different asset types.
 User Interface: Expand the UI with product detail pages, checkout flow, search functionality, and user account management.
 IndexedDB: Use IndexedDB for persistent client-side storage of larger datasets (like the shopping cart or recently viewed products) that need to survive browser restarts.
 Background Sync: Implement Background Sync to queue failed network requests (e.g., adding to cart while offline) and retry them when the network is restored.
+
+
+*OUTPUT*
+![Image](https://github.com/user-attachments/assets/dd92b199-c82a-4ea2-b966-1a68df7886ae)
 
